@@ -1,0 +1,56 @@
+#!/bin/bash
+
+DIRECTORY=source/
+if [ -d "$DIRECTORY" ]; then
+
+	rm -fr docstxt
+
+	#Takes documentation from git and puts it in the docstxt folder
+	git clone https://github.com/Edwux121/docstxt
+
+	#Changes all .txt extansions to .rst
+	for file in docstxt/*.txt
+	do
+		mv "$file" "${file%.txt}.rst"
+	done
+
+	declare -a files_array
+
+	for file in docstxt/*.rst
+	do
+		cp "$file" "source/"
+		files_array=(docstxt/*.rst)
+	done
+	
+	line=20
+
+	for item in ${files_array[*]}
+	do
+		filename=$(basename -- "$item")
+                filename="${filename%.*}"
+		checker=(\ \ \ ${filename})
+		count=$(grep -cw "$checker" source/index.rst)
+		if [ $count != 0 ]; then
+			
+			echo "Entry already exists."			
+	
+		else
+			sed -i "${line}i \ \ \ ${filename}" source/index.rst
+			$((line++))
+		fi
+	done
+
+	#Deletes old html files
+	make clean
+	#Generates html files
+	make html
+
+	rm -rf /var/www/html/docs/*	
+	cp -fnr build/html/* /var/www/html/docs
+	rm -fr docstxt
+
+	echo "Complete!"
+
+else 
+	echo "You can only execute this script in /docs folder"
+fi 

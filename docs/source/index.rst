@@ -1,5 +1,5 @@
 Simple Documentation Tutorial: Doctut
-==================================
+=====================================
 
 Another simple header
 =====================
@@ -13,13 +13,14 @@ Guide
 ^^^^^
 
 .. toctree::
-   :maxdepth: 2
+      :maxdepth: 2
 
    license
    help
+   hello2
 
 
-Indices and tables
+Indixes and tables
 ==================
 
 * :ref:`genindex`
