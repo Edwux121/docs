@@ -17,6 +17,12 @@ Guide
 
    license
    help
+   anotherdoc
+   hello2
+   hello
+   presentation
+   test
+   sup
 
 
 Indexes and tables

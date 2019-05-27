@@ -22,7 +22,7 @@ if [ -d "$DIRECTORY" ]; then
 		files_array=(docstxt/*.rst)
 	done
 	
-	line=20
+	line=$(head -n 1 scripts/line_number.txt)
 
 	for item in ${files_array[*]}
 	do
@@ -37,6 +37,7 @@ if [ -d "$DIRECTORY" ]; then
 		else
 			sed -i "${line}i \ \ \ ${filename}" source/index.rst
 			$((line++))
+			sed -i "1s/.*/$line/" scripts/line_number.txt
 		fi
 	done
 
