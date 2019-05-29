@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'doctut'
+project = u'Read the Docs'
 copyright = u'2019, Edvinas'
 author = u'Edvinas'
 

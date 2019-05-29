@@ -1,8 +1,8 @@
-Simple Documentation Tutorial: Doctut
-=====================================
+Read the Docs Documentation
+===========================
 
 Another simple header
-=====================
+^^^^^^^^^^^^^^^^^^^^^
 
 Here is some text explaining some very complicated stuff.::
 
@@ -15,11 +15,11 @@ Guide
 .. toctree::
       :maxdepth: 2
 
-   license
-   help
+   prep
+   install
 
 
-Indexes and tables
+Indices and tables
 ==================
 
 * :ref:`genindex`
