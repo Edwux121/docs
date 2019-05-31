@@ -54,8 +54,8 @@ function generate_documentation {
 	#Generates html files
 	make html
 
-	rm -rf /var/www/html/docs/*	
-	cp -fnr build/html/* /var/www/html/docs
+	rm -rf /var/www/html/*	
+	cp -fnr build/html/* /var/www/html/.
 	rm -fr docstxt
 
 	echo "Complete!"
