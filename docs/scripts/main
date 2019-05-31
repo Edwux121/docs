@@ -9,7 +9,7 @@ else
 	echo "You can only execute this script in /docs folder"
 fi 
 
-function generate_documentation {
+function generate_documentation() {
 
 	rm -fr docstxt
 
