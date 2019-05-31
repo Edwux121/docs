@@ -1,14 +1,5 @@
 #!/bin/bash
 
-DIRECTORY=source/
-if [ -d "$DIRECTORY" ]; then
-
-	generate_documentation
-
-else 
-	echo "You can only execute this script in /docs folder"
-fi 
-
 function generate_documentation() {
 
 	rm -fr docstxt
@@ -60,3 +51,12 @@ function generate_documentation() {
 
 	echo "Complete!"
 }
+
+DIRECTORY=source/
+if [ -d "$DIRECTORY" ]; then
+
+	generate_documentation
+
+else 
+	echo "You can only execute this script in /docs folder"
+fi 
