@@ -3,6 +3,14 @@
 DIRECTORY=source/
 if [ -d "$DIRECTORY" ]; then
 
+	generate_documentation
+
+else 
+	echo "You can only execute this script in /docs folder"
+fi 
+
+function generate_documentation {
+
 	rm -fr docstxt
 
 	#Takes documentation from git and puts it in the docstxt folder
@@ -51,7 +59,4 @@ if [ -d "$DIRECTORY" ]; then
 	rm -fr docstxt
 
 	echo "Complete!"
-
-else 
-	echo "You can only execute this script in /docs folder"
-fi 
+}
